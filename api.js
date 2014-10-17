@@ -370,5 +370,16 @@ module.exports = {
             "edge",
             "shortest_path_query"
         ])
+    },
+    Clustering: {
+        methods: common.methods.concat([
+            "push",
+            "get_revision",
+            "get_core_members",
+            "get_k_center",
+            "get_nearest_center",
+            "get_nearest_members"
+        ]),
+        types: common.types.concat([])
     }
 };
