@@ -11,16 +11,14 @@
     "url": "https://github.com/naokikimura/jubatus-node-client.git"
   },
   "dependencies": {
-    "msgpack": "0.2.6",
-    "msgpack-js": "https://github.com/naokikimura/msgpack-js/tarball/spike",
-    "json-schema": "*"
+    "async": "^2.0.0-rc.3",
+    "json-schema": "^0.2.2",
+    "msgpack": "^1.0.2",
+    "msgpack-js": "^0.3.0"
   },
-  "readmeFilename": "README.md",
-  "gitHead": "22a1b0a18ef09251569dd77a4c65089a01d5e36f",
   "description": "Jubatus client for Node.js (unofficial)",
   "devDependencies": {
-    "nodeunit": "*",
-    "async": "*"
+    "nodeunit": "^0.9.1"
   },
   "scripts": {
     "test": "nodeunit test/"
