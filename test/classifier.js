@@ -29,7 +29,7 @@ module.exports = {
                         callback = function () {};
                     }
                 });
-                jubaclassifier.stderr.on('data', function (data) {
+                jubaclassifier.stdout.on('data', function (data) {
                     if (/RPC server startup/.test(data.toString())) {
                         callback(null);
                         callback = function () {};
@@ -73,7 +73,7 @@ module.exports = {
         var self = this;
         async.series([
             function (callback) {
-                var datum = [ [ ["foo", "bar"] ], [ ["qux", new msgpack.type.Double(1)] ] ],
+                var datum = [ [ ["foo", "bar"] ], [ ["qux", 1] ] ],
                     data = [ datum ];
                 self.classifier.classify(data, function (error, result) {
                     debug({ error: error, result: result });
@@ -83,7 +83,7 @@ module.exports = {
                 });
             },
             function (callback) {
-                var datum = [ [ ["foo", "bar"] ], [ ["qux", new msgpack.type.Double(1)] ] ],
+                var datum = [ [ ["foo", "bar"] ], [ ["qux", 1] ] ],
                     label = "baz",
                     data = [ [label, datum] ];
                 self.classifier.train(data, callback);

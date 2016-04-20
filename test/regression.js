@@ -29,7 +29,7 @@ module.exports = {
                         callback = function () {};
                     }
                 });
-                jubaregression.stderr.on('data', function (data) {
+                jubaregression.stdout.on('data', function (data) {
                     if (/RPC server startup/.test(data.toString())) {
                         callback(null);
                         callback = function () {};
@@ -84,7 +84,7 @@ module.exports = {
             },
             function (callback) {
                 var datum = [ [ ["foo", "bar"] ], [] ],
-                    value = new msgpack.type.Double(1),
+                    value = 1,
                     data = [ [value, datum] ];
                 self.regression.train(data, callback);
             },

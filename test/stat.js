@@ -29,7 +29,7 @@ module.exports = {
                         callback = function () {};
                     }
                 });
-                jubastat.stderr.on('data', function (data) {
+                jubastat.stdout.on('data', function (data) {
                     if (/RPC server startup/.test(data.toString())) {
                         callback(null);
                         callback = function () {};
@@ -76,7 +76,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {
@@ -98,7 +98,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {
@@ -121,7 +121,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {
@@ -144,7 +144,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {
@@ -166,7 +166,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {
@@ -188,7 +188,7 @@ module.exports = {
         async.series([
             function (callback) {
                 async.each(values, function (value, callback) {
-                    self.stat.push(key, new msgpack.type.Double(value), callback);
+                    self.stat.push(key, value, callback);
                 }, callback);
             },
             function (callback) {

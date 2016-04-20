@@ -28,7 +28,7 @@ module.exports = {
                         callback = function () {};
                     }
                 });
-                jubaclassifier.stderr.on('data', function (data) {
+                jubaclassifier.stdout.on('data', function (data) {
                     if (/RPC server startup/.test(data.toString())) {
                         callback(null);
                         callback = function () {};
@@ -101,6 +101,7 @@ module.exports = {
     },
     get_proxy_status: function (test) {
         this.classifier.getProxyStatus(function (error, result) {
+			console.log(String(error),result);
             debug({ error: error, result: result });
             test.equal(error, null, error);
             test.ok(result);
